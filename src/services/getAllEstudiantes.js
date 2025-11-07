@@ -1,7 +1,7 @@
 const BASE_URL = import.meta.env.VITE_API_URL;  
 
 export const getAllEstudiantes = async () => {
-    const res = await fetch(`${BASE_URL}/estudiantes`);
+    const res = await fetch(`${BASE_URL}/api/estudiantes`);
     if (!res.ok) throw new Error("Error al obtener estudiantes");
     return res.json();
 };
