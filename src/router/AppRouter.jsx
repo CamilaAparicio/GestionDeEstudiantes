@@ -5,6 +5,7 @@ import EstudiantesPage from '../pages/AllEstudiante/EstudiantesPage';
 import ListaEstudiantes from '../components/EstudiantesForms/ListaEstudiantes';
 import AddEstudiantePage from '../pages/AddEstudiante/AddEstudiantePage';
 import EstudiantesPorCursoPage from '../pages/Cursos/EstudiantesPorCursoPage';
+import EditarEstudiantePage from '../pages/EditEstudiantePage/EditarEstudiantePage';
 
 export const AppRouter = () => (
     <MenuLayout>
@@ -14,6 +15,7 @@ export const AppRouter = () => (
             <Route path="/estudiantes/lista" element={<ListaEstudiantes />}/>
             <Route path="/estudiantes/agregar" element={<AddEstudiantePage />} />
             <Route path="/cursos" element={<EstudiantesPorCursoPage />} />
+            <Route path="/estudiantes/editar" element={<EditarEstudiantePage />} />
         </Routes>
     </MenuLayout>
 )
