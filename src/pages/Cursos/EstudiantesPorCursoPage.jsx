@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, TextField, Typography, CircularProgress } from '@mui/material';
-import useEstudiantesPorCurso from '../hooks/useEstudiantesPorCurso';
+import useEstudiantesPorCurso from '../../hooks/useEstudiantesPorCurso';
 import { ListaEstudiantesFil } from './ListaEstudiantesFil';
 
 function EstudiantesPorCursoPage() {

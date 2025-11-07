@@ -4,6 +4,7 @@ import Home from '../pages/Home/Home';
 import EstudiantesPage from '../pages/AllEstudiante/EstudiantesPage';
 import ListaEstudiantes from '../components/EstudiantesForms/ListaEstudiantes';
 import AddEstudiantePage from '../pages/AddEstudiante/AddEstudiantePage';
+import EstudiantesPorCursoPage from '../pages/Cursos/EstudiantesPorCursoPage';
 
 export const AppRouter = () => (
     <MenuLayout>
@@ -12,6 +13,7 @@ export const AppRouter = () => (
             <Route path="/estudiantes" element={<EstudiantesPage />} />
             <Route path="/estudiantes/lista" element={<ListaEstudiantes />}/>
             <Route path="/estudiantes/agregar" element={<AddEstudiantePage />} />
+            <Route path="/cursos" element={<EstudiantesPorCursoPage />} />
         </Routes>
     </MenuLayout>
 )
