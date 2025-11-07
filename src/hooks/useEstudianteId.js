@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import {getEstudianteById}  from '../services/getEstudiantePorId'; 
+import getEstudianteById from '../services/getEstudiantePorId'; 
 
-const useEstudianteById = (estudianteId) => {
+const useEstudianteId = (estudianteId) => {
     const [estudiante, setEstudiante] = useState(null); 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -35,4 +35,4 @@ const useEstudianteById = (estudianteId) => {
     return { estudiante, setEstudiante, loading, error };
 };
 
-export default useEstudianteById;
+export default useEstudianteId;

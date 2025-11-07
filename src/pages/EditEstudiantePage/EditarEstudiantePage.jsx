@@ -3,13 +3,13 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Box, Typography, CircularProgress, Alert, Button } from '@mui/material';
 import SaveIcon from '@mui/icons-material/Save';
 import CamposFormulario from '../../components/EstudiantesForms/CamposFormulario'; 
-import useEstudianteById from '../../hooks/useEstudianteById'; 
+import useEstudianteId from '../../hooks/useEstudianteId'; 
 import useUpdateEstudiante from '../../hooks/useUpdateEstudiante'; 
 
 function EditarEstudiantePage() {
     const { id } = useParams(); 
     const navigate = useNavigate();
-    const { estudiante, loading: loadingFetch, error: errorFetch } = useEstudianteById(id);
+    const { estudiante, loading: loadingFetch, error: errorFetch } = useEstudianteId(id);
     const { updateEstudiante, loading: loadingUpdate, success, error: errorUpdate } = useUpdateEstudiante();
 
     const [formData, setFormData] = useState(null); 
