@@ -11,11 +11,12 @@ export const AppRouter = () => (
     <MenuLayout>
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/estudiantes" element={<EstudiantesPage />} />
-            <Route path="/estudiantes/lista" element={<ListaEstudiantes />}/>
-            <Route path="/estudiantes/agregar" element={<AddEstudiantePage />} />
+            <Route path="/estudiantes" element={<EstudiantesPage />}>
+                <Route index element={<ListaEstudiantes />} />
+                <Route path="agregar" element={<AddEstudiantePage />} />
+                <Route path="editar/:id" element={<EditarEstudiantePage />} />    
+            </Route>
             <Route path="/cursos" element={<EstudiantesPorCursoPage />} />
-            <Route path="/editar/:id" element={<EditarEstudiantePage />} />
         </Routes>
     </MenuLayout>
-)
+);
