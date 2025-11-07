@@ -11,8 +11,6 @@ export const Navbar = () => (
                 StudiesApp
              </Typography> 
             <Button color="inherit" component={Link} to ="/">Inicio</Button>
-            <Button color="inherit" component={Link} to="/estudiantes">Iniciar Sesión</Button>
-
                 <ThemeButton />
         </Toolbar>
     </AppBar>  
