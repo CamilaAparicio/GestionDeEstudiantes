@@ -27,7 +27,7 @@ function EstudiantesPage() {
                     variant={isActive('/agregar') ? "contained" : "outlined"}
                     onClick={() => navigate('/estudiantes/agregar')}
                 >
-                    Buscar y Editar
+                    Crear Estudiante
                 </Button>
             </Box>
             <Outlet />
