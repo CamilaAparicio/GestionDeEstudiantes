@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, TextField, Typography, CircularProgress } from '@mui/material';
 import useEstudiantesPorCurso from '../../hooks/useEstudiantesPorCurso';
-import { ListaEstudiantesFil } from './ListaEstudiantesFil';
+import ListaEstudiantesFil from './ListaEstudiantesFil';
 
 function EstudiantesPorCursoPage() {
     const [cursoBuscado, setCursoBuscado] = useState('');
