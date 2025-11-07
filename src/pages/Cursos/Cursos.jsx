@@ -1,45 +1,55 @@
-import { useState } from 'react';
+/*import React, { useState } from 'react';
 import { useEstudiantesPorCurso } from '../../hooks/useEstudiantesPorCurso';
-import EstudianteCard from '../../components/estudianteCard';
+import FiltroFormulario from './FiltroFormulario';
+import EstudiantesTabla from '../../components/EstudiantesTabla';
 
+function Cursos() {
+    const [inputCurso, setInputCurso] = useState(''); 
+    const [cursoFiltro, setCursoFiltro] = useState(''); 
 
-const cursosValidos = ['Matemática', 'Historia', 'Ciencias', 'Arte'];
+    const { 
+        data: estudiantes,
+        loading, 
+        error 
+    } = useEstudiantesPorCurso(cursoFiltro);
 
-const Cursos = () => {
-  const [curso, setCurso] = useState('');
-  const { data, loading, error } = useEstudiantesPorCurso(curso);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setCursoFiltro(inputCurso); 
+    };
 
-  return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Filtrar estudiantes por curso</h1>
+    const handleClear = () => {
+        setInputCurso(''); 
+        setCursoFiltro('');
+    };
 
-      <label htmlFor="curso-select">Curso:</label>
-      <select
-        id="curso-select"
-        value={curso}
-        onChange={(e) => setCurso(e.target.value)}
-        style={{ margin: '1rem 0', padding: '0.5rem' }}
-      >
-        <option value="">-- Elegí un curso --</option>
-        {cursosValidos.map((c) => (
-          <option key={c} value={c}>{c}</option>
-        ))}
-      </select>
+    return (
+      <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto' }}>
+          <h1>Buscador de Alumnos por Curso</h1>
+            
+            <FiltroFormulario 
+                inputCurso={inputCurso}
+                setInputCurso={setInputCurso}
+                handleSubmit={handleSubmit}
+                handleClear={handleClear}
+                loading={loading}
+            />
 
-      {loading && <p>Cargando estudiantes...</p>}
-      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+            <hr/>
 
-      {!loading && !error && data.length === 0 && curso && (
-        <p>No hay estudiantes en el curso "{curso}".</p>
-      )}
-
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-        {data.map(est => (
-          <EstudianteCard key={est._id} estudiante={est} />
-        ))}
-      </div>
-    </div>
-  );
-};
+    {error && <p style={{ color: 'red', fontWeight: 'bold' }}>Error al cargar: {error}</p>}
+            
+            {loading && cursoFiltro ? (
+                <p> **Cargando estudiantes** del curso "{cursoFiltro}"...</p>
+            ) : (
+                <EstudiantesTabla
+                    estudiantes={estudiantes} 
+                    cursoFiltro={cursoFiltro} 
+                />
+            )}
+        </div>
+    );
+}
 
 export default Cursos;
+*/

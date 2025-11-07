@@ -2,31 +2,47 @@ import { useEffect, useState } from "react";
 import { getEstudiantesPorCurso } from "../services/getEstudiantesPorCurso";
 
 export const useEstudiantesPorCurso = (curso) => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
-  useEffect(() => {
-    if (!curso || curso.trim() === "") {
-      setData([]); 
-    }
+    useEffect(() => {
+        if (!curso) {
+            setData([]);
+            setLoading(false);
+            setError(null);
+            return;
+        }
+        let isCancelled = false;
+        
+        const fetchData = async () => {
+            setLoading(true);
+            setError(null);
 
-    const fetchData = async () => {
-      setLoading(true);
-      setError(null);
+            try {
+        const estudiantes = await getEstudiantesPorCurso(curso); 
+                
+          if (!isCancelled) {
+                    setData(estudiantes);
+                }
+          } catch (err) {
 
-      try {
-        const estudiantes = await getEstudiantesPorCurso(curso);
-        setData(estudiantes);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+          if (!isCancelled) {
+                    setError(err.message || "Error desconocido al cargar estudiantes.");
+                    setData([]); 
+                  }
+            } finally {
+          if (!isCancelled) {
+                    setLoading(false);
+                }
+            }
+        };
 
-    fetchData();
-  }, [curso]);
+        fetchData();
 
-  return { data, loading, error };
+        return () => {
+            isCancelled = true;
+        };
+    }, [curso]);
+    return { data, loading, error };
 };
