@@ -10,10 +10,11 @@ const Footer = () => (
       textAlign: 'center',
       backgroundColor: 'primary.main',
       color: 'primary.contrastText',
+      width: '100%'
     }}
   >
     <Typography variant="body2">
-      © {new Date().getFullYear()} StudiesApp — Hecho con amor por Camila Aparicio
+      © {new Date().getFullYear()} StudiesApp — Hecho por Camila Aparicio
     </Typography>
   </Box>
 );
