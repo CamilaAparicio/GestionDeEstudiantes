@@ -1,0 +1,19 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {ThemeProvider} from './Theme/themeProvider';
+import { AppRouter } from './router/AppRouter';
+
+
+function App() {
+ 
+  return (
+    <ThemeProvider>
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
+    </ThemeProvider>
+
+  );
+
+}
+
+export default App
