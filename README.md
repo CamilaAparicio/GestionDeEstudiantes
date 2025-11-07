@@ -76,5 +76,9 @@ npm run dev
 
 
 ---
-
-
+### Mejoras a implementar a futuro
+* Aplicación de Api context
+* Mejorar en responsive
+---
+### Deployado en vercel:
+[Gestion de estudiantes](https://gestion-de-estudiantes.vercel.app/).
