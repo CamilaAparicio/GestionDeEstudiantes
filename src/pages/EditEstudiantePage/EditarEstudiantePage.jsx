@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Box, Typography, CircularProgress, Alert, Button } from '@mui/material';
 import SaveIcon from '@mui/icons-material/Save';
-import CamposFormulario from '../components/EstudiantesForms/CamposFormulario'; 
-import useEstudianteById from '../hooks/useEstudianteById'; 
-import useUpdateEstudiante from '../hooks/useUpdateEstudiante'; 
-
+import CamposFormulario from '../../components/EstudiantesForms/CamposFormulario'; 
+import useEstudianteById from '../../hooks/useEstudianteById'; 
+import useUpdateEstudiante from '../../hooks/useUpdateEstudiante'; 
 
 function EditarEstudiantePage() {
     const { id } = useParams(); 
