@@ -82,3 +82,15 @@ npm run dev
 ---
 ### Deployado en vercel:
 [Gestion de estudiantes](https://gestion-de-estudiantes.vercel.app/).
+
+## Home Desktop
+<img width="1893" height="935" alt="ThemeLight" src="https://github.com/user-attachments/assets/9d09930d-9a93-4cee-a9eb-7a487870403e" />
+
+### DarkTheme
+<img width="1892" height="875" alt="ThemeDark" src="https://github.com/user-attachments/assets/4bb5f5b9-7aae-47b0-ba96-3d441171ca3e" />
+
+### Mobile 
+<img width="406" height="828" alt="image" src="https://github.com/user-attachments/assets/40ced80a-f6a5-48bc-83f5-8784da9f79a2" />
+
+
+
