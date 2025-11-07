@@ -25,7 +25,7 @@ function EstudiantesPorCursoPage() {
      <Box sx={{ display: 'flex', gap: 2, alignItems: 'flex-end', mb: 3 }}>
          <TextField label="Nombre del Curso" value={inputValue}  onChange={handleInputChange} fullWidth margin="normal" variant="outlined" helperText="Escriba el nombre exacto del curso para realizar la búsqueda."
                 />
-                <Button variant="contained" onClick={handleBuscarClick} disabled={!inputValue.trim() || loading} startIcon={<SearchIcon />} sx={{ height: 56 }} >
+                <Button variant="contained" onClick={handleBuscarClick} disabled={!inputValue.trim() || loading} startIcon={<SearchIcon />} sx={{ height: 40}} >
                     Buscar
                 </Button>
             </Box>
