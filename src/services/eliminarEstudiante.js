@@ -7,5 +7,5 @@ export const eliminarEstudiante = async (id) => {
          headers: {
         "content-type": "application/json", Authorization: `${AUTH}`},
     });
-    if (!res.ok) throw new Error("Error al eliminar estudiantee");
+    if (!res.ok) throw new Error("Error al eliminar estudiante");
 }

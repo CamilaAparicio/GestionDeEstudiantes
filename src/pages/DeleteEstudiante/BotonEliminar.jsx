@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, CircularProgress } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import useDeleteEstudiante from '../../hooks/useDeleteEstudiante';

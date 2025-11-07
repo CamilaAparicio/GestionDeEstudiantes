@@ -6,6 +6,10 @@ const useDeleteEstudiante = () => {
     const [error, setError] = useState(null);
 
     const deleteEstudiante = async (id, onSuccess) => {
+        if (!id) {
+            setError('Error: ID de estudiante no proporcionado.');
+            return; 
+        }
         setLoading(true);
         setError(null);
 
