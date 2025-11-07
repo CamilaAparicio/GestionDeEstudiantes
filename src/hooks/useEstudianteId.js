@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import getEstudiantePorId from '../services/getEstudiantePorId'; 
+import {getEstudiantePorId} from '../services/getEstudiantePorId'; 
 
 const useEstudianteId = (estudianteId) => {
     const [estudiante, setEstudiante] = useState(null); 
