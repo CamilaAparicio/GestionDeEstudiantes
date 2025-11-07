@@ -1,48 +1,36 @@
-import { useEffect, useState } from "react";
-import { getEstudiantesPorCurso } from "../services/getEstudiantesPorCurso";
+import { useState, useEffect } from 'react';
+import { getEstudiantesPorCurso } from '../services/getEstudiantesPorCurso';
 
-export const useEstudiantesPorCurso = (curso) => {
-    const [data, setData] = useState([]);
+const useEstudiantesPorCurso = (curso) => {
+    const [estudiantes, setEstudiantes] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        if (!curso) {
-            setData([]);
-            setLoading(false);
-            setError(null);
+        if (!curso || curso.trim() === '') {
+            setEstudiantes([]);
             return;
         }
-        let isCancelled = false;
-        
-        const fetchData = async () => {
+        const fetchEstudiantes = async () => {
             setLoading(true);
             setError(null);
 
             try {
-        const estudiantes = await getEstudiantesPorCurso(curso); 
-                
-          if (!isCancelled) {
-                    setData(estudiantes);
-                }
-          } catch (err) {
-
-          if (!isCancelled) {
-                    setError(err.message || "Error desconocido al cargar estudiantes.");
-                    setData([]); 
-                  }
+                const data = await getEstudiantesPorCurso(curso);
+                setEstudiantes(data);
+            } catch (err) {
+                console.error("Fallo al obtener estudiantes por curso:", err);
+                setError(err.message || `No se pudo obtener estudiantes para el curso: ${curso}`);
+                setEstudiantes([]);
             } finally {
-          if (!isCancelled) {
-                    setLoading(false);
-                }
+                setLoading(false);
             }
         };
 
-        fetchData();
-
-        return () => {
-            isCancelled = true;
-        };
+        fetchEstudiantes();
     }, [curso]);
-    return { data, loading, error };
+
+    return { estudiantes, loading, error };
 };
+
+export default useEstudiantesPorCurso;
