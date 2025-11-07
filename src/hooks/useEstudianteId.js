@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import getEstudianteById from '../services/getEstudiantePorId'; 
+import getEstudiantePorId from '../services/getEstudiantePorId'; 
 
 const useEstudianteId = (estudianteId) => {
     const [estudiante, setEstudiante] = useState(null); 
@@ -18,7 +18,7 @@ const useEstudianteId = (estudianteId) => {
             setError(null);
             
             try {
-                const data = await getEstudianteById(estudianteId);
+                const data = await getEstudiantePorId(estudianteId);
                 setEstudiante(data);
             } catch (err) {
                 console.error("Fallo al obtener estudiante:", err);
