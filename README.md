@@ -5,6 +5,7 @@
 ## Tecnologías Utilizadas
 
 ## Estructura Modular:
+```
 |____package-lock.json
 |____package.json
 |____public/
