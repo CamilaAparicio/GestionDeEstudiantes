@@ -3,10 +3,11 @@
 ### StudiesApp es una web que organiza la información de los estudiantes. Desarrollada en React + MUI, está pensada de manera simple para docentes que necesitan información rapida y precisa
 ----
 ## Tecnologías Utilizadas
-*Listado de estudiantes con sus datos con botón de borrado
-*Formulario para agregar nuevos alumnos
-*Drawer para Mobiles
-*Filtro de estudiantes por cursos
+* Listado de estudiantes con sus datos con botón de borrado
+* Formulario para agregar nuevos alumnos
+* Drawer para Mobiles
+* Filtro de estudiantes por cursos
+---
 ## Estructura Modular:
 ```
 |____package-lock.json
