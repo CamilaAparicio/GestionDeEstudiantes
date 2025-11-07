@@ -19,7 +19,7 @@ function EstudiantesPage() {
             <Box sx={{ mb: 3, display: 'flex', gap: 2 }}>
                 <Button 
                     variant={isActive('/') ? "contained" : "outlined"}
-                    onClick={() => navigate('/ListaEstudiantes')}
+                    onClick={() => navigate('/estudiantes/lista')}
                 >
                     Lista de Estudiantes
                 </Button>
